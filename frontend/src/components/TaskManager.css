@@ -1,0 +1,40 @@
+:root {
+    --main-bg-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+    --main-color: rgb(79 70 229 / var(--tw-bg-opacity, 1))
+  }
+
+.card{
+    width: 100%;
+    background-color: var(--main-bg-color);
+    max-width: 42rem;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+
+.header {
+    background-color: var(--main-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main {
+    background-color: rgb(242, 242, 242);
+    box-sizing: border-box; /* IMPORTANT: if the object is 100px h, and we add a padding, the height is still 100px */
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    border: 0;
+    margin: 0;
+}
