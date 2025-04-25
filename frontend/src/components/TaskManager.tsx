@@ -1,5 +1,6 @@
 import { CheckCircle } from 'lucide-react'
 import './TaskManager.css'
+import TaskForm from './TaskForm'
 
 function TaskManager () {
     return (
@@ -9,6 +10,8 @@ function TaskManager () {
                     <CheckCircle/> 
                     <div>Task Manager</div>
                 </div>
+                <TaskForm />
+
                 <div>
                     tasks...
                 </div>

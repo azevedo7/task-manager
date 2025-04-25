@@ -1,0 +1,62 @@
+:root {
+    --input-border-radius: 0.5rem;
+    --main-color: rgb(79 70 229 / var(--tw-bg-opacity, 1));
+    --border-color: #e5e7eb;
+}
+
+.task-form-component {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.task-form {
+    width: 100%;
+}
+
+.task-form .task {
+    display: flex;
+    justify-content: center;
+}
+
+.task-form input, .task-form button {
+    padding: 0.75rem 1rem;
+}
+
+.task-form input {
+    border-top-left-radius: var(--input-border-radius);
+    border-bottom-left-radius: var(--input-border-radius);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    font-size: medium
+}
+
+/* Need to add the ring on focus input and button */
+.task-form input:focus {
+    border-top-right-radius: 0;
+    border: 1px solid var(--main-color);
+    border-left: none;
+}
+
+.task-form button{
+    border-top-right-radius: var(--input-border-radius);
+    border-bottom-right-radius: var(--input-border-radius);
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    font-size: medium;
+    color: white;
+    background-color: var(--main-color);
+}
+
+.task-form button .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.task-form button:hover {
+    background-color: rgb(55 48 163 / var(--tw-bg-opacity, 1));
+}
