@@ -10,12 +10,14 @@
     box-sizing: border-box;
     border-radius: 0.6rem;
     overflow: hidden;
+    background-color: white;
+    box-shadow: 2px 5px 8px rgba(128, 128, 128, 0.197);
 }
 
 .header {
     background-color: var(--main-color);
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 1.1rem 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,7 +28,7 @@
 }
 
 .main {
-    background-color: rgb(242, 242, 242);
+    background-color: var(--main-bg-color);
     box-sizing: border-box; /* IMPORTANT: if the object is 100px h, and we add a padding, the height is still 100px */
     min-height: 100vh;
     padding: 2rem 1rem;
