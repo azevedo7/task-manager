@@ -15,7 +15,14 @@
     flex:1;
     justify-content: space-between;
     display: flex;
+    gap: 0.5rem;
     flex-direction: column;
+}
+
+.taskDate {
+    color: gray;
+    font-size: smaller;
+    font-weight: 400;
 }
 
 .toggle{
@@ -59,3 +66,7 @@ svg {
     background-color: rgb(243, 242, 242);
 }
 
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}

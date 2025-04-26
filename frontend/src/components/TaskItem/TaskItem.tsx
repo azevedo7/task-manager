@@ -1,4 +1,4 @@
-import { CheckCircle, Circle, Trash } from 'lucide-react'
+import { CheckCircle, Circle, PencilIcon, Trash } from 'lucide-react'
 import type TaskType from '../../types/Task'
 import classes from './TaskItem.module.css'
 
@@ -16,8 +16,17 @@ const TaskItem = ({ task, onToggle, onDelete }: Props) => {
           {task.completed ? <CheckCircle /> : <Circle />}
         </button>
       </div>
-      <div className={classes.taskMain}>{task.name}</div>
-      <div>
+      <div className={classes.taskMain}>
+        <div>{task.name}</div>
+        <div className={classes.taskDate}>{task.createdAt.toLocaleDateString("pt-PT", {
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+        })}</div>
+      </div>
+      <div className={classes.actions}>
+        <button onClick={onDelete} className={`${classes.iconButton}`}><PencilIcon /></button>
         <button onClick={onDelete} className={`${classes.iconButton}`}><Trash /></button>
       </div>
     </div>
