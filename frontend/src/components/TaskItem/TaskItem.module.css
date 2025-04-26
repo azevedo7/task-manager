@@ -1,0 +1,61 @@
+.task {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+}
+
+.taskMain {
+    flex:1;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle{
+    background-color: transparent;
+    border: none;
+    width: 1.2rem;
+    display: flex;
+    padding: 0;
+    width: 1;
+    color: gray;
+}
+
+svg {
+    width: auto;
+    height: auto;
+}
+
+.toggle.completed, .toggle:hover {
+    color: var(--primary-color);
+}
+
+
+.toggle.on{
+    border: 1px solid violet
+}
+
+.iconButton {
+    height: 16px;
+    width: 16px;
+    display: flex;
+    border: none;
+    background-color: transparent;
+    color: gray;
+    border-radius: 100%;
+    padding: 0.2rem;
+    box-sizing:content-box;
+}
+
+.iconButton:hover {
+    color: rgb(215, 28, 28);
+    background-color: rgb(243, 242, 242);
+}
+

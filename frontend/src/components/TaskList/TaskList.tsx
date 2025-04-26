@@ -1,20 +1,20 @@
 import { useState } from 'react'
-import TaskType from '../../types/Task'
+import Task from '../../types/Task'
 import classes from './TaskList.module.css'
 import { FilterType } from '../../types/FilterType'
 import TaskFilter from '../TaskFilter/TaskFilter'
-import Task from '../Task/Task'
-
+import TaskItem from '../TaskItem/TaskItem'
 
 type Props = {
-    tasks: TaskType[]
+    tasks: Task[],
+    onToggle: (id: number) => Task | undefined,
+    onDelete: (id: number) => void,
 }
 
-const TaskList = ({ tasks }: Props) => {
+const TaskList = ({ tasks, onToggle, onDelete }: Props) => {
     const [filter, setFilter] = useState<FilterType>('all') 
 
     function onFilterChange(filterName: FilterType){
-
         setFilter(filterName);
     }
 
@@ -26,7 +26,7 @@ const TaskList = ({ tasks }: Props) => {
 
             <div className={classes.taskList}>
                 {filteredTasks.map(task => (
-                    <Task task={task} key={task.id} />
+                    <TaskItem task={task} onDelete={() => onDelete(task.id)} onToggle={() => onToggle(task.id)} key={task.id} />
                 ))}
             </div>
         </div>

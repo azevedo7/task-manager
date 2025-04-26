@@ -1,4 +1,3 @@
-import React from 'react'
 import { FilterType } from '../../types/FilterType'
 import classes from './TaskFilter.module.css'
 import FilterButton from './FilterButton'

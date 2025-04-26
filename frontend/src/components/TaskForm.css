@@ -1,7 +1,6 @@
 :root {
     --input-border-radius: 0.5rem;
     --main-color: rgb(79 70 229 / var(--tw-bg-opacity, 1));
-    --border-color: #e5e7eb;
 }
 
 .task-form-component {

@@ -33,6 +33,21 @@ function TaskManager () {
         return true;
     }
 
+    // Toggle task
+    function toggleTask(id: number){
+        const task = tasks.find(task => task.id === id);
+        if (task) {
+            setTasks(tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t))
+        }
+        return task
+    }
+
+    // Delete task
+    function deleteTask(id: number){
+        setTasks(tasks.filter(task => task.id !== id));
+    }
+
+    // Edit task
 
 
     return (
@@ -45,7 +60,7 @@ function TaskManager () {
                 <div className='content'>
                     <TaskForm onAddTask={onAddTask}/>
 
-                    <TaskList tasks={tasks}/>
+                    <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask}/>
                 </div>
             </div>
         </div>

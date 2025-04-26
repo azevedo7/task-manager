@@ -1,7 +1,9 @@
 .tab {
     display: flex;
     gap: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
 }
 
 .tab button {
@@ -11,6 +13,7 @@
     font-size: 0.9rem;
     color: rgb(98, 98, 98);
     padding-bottom: 0.4rem;
+    padding: 0.4rem;
 }
 
 .tab button.selected {
