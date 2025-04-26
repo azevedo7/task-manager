@@ -9,6 +9,10 @@ function TaskManager () {
         {
             name: "teste tarefa",
             completed: false
+        },
+        {
+            name: 'tarefa completa',
+            completed: true,
         }
     ])
 

@@ -13,13 +13,16 @@ const TaskList = ({ tasks }: Props) => {
     const [filter, setFilter] = useState<FilterType>('all') 
 
     function onFilterChange(filterName: FilterType){
+
         setFilter(filterName);
     }
+
+    const filteredTasks = filter != 'all' ? tasks.filter(task => task.completed === (filter !== 'active')): tasks;
 
     return (
         <div className={classes.main}>
             <TaskFilter filter={filter} onFilterChange={onFilterChange} /> 
-            {tasks.map(task => 
+            {filteredTasks.map(task => 
                 <div>
                     {task.name}
                 </div>
@@ -28,4 +31,5 @@ const TaskList = ({ tasks }: Props) => {
 
   )
 }
+
 export default TaskList;
