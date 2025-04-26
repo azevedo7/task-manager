@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import type Task from '../../types/Task'
+import { useState } from 'react'
+import TaskType from '../../types/Task'
 import classes from './TaskList.module.css'
 import { FilterType } from '../../types/FilterType'
 import TaskFilter from '../TaskFilter/TaskFilter'
+import Task from '../Task/Task'
 
 
 type Props = {
-    tasks: Task[]
+    tasks: TaskType[]
 }
 
 const TaskList = ({ tasks }: Props) => {
@@ -22,11 +23,12 @@ const TaskList = ({ tasks }: Props) => {
     return (
         <div className={classes.main}>
             <TaskFilter filter={filter} onFilterChange={onFilterChange} /> 
-            {filteredTasks.map(task => 
-                <div>
-                    {task.name}
-                </div>
-            )}
+
+            <div className={classes.taskList}>
+                {filteredTasks.map(task => (
+                    <Task task={task} key={task.id} />
+                ))}
+            </div>
         </div>
 
   )
