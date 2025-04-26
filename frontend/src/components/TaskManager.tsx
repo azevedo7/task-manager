@@ -1,8 +1,26 @@
 import { CheckCircle } from 'lucide-react'
 import './TaskManager.css'
 import TaskForm from './TaskForm'
+import { useState } from 'react'
+import TaskList from './TaskList/TaskList'
 
 function TaskManager () {
+    const [tasks, setTasks] = useState([
+        {
+            name: "teste tarefa",
+            completed: false
+        }
+    ])
+
+    function onAddTask(taskName: string) {
+        // Add task to list
+        setTasks([...tasks, { name: taskName, completed: false }])
+
+        // Return true for now
+        return true;
+    }
+
+
     return (
         <div className="main">
             <div className="card">
@@ -10,10 +28,10 @@ function TaskManager () {
                     <CheckCircle/> 
                     <div>Task Manager</div>
                 </div>
-                <TaskForm />
+                <div className='content'>
+                    <TaskForm onAddTask={onAddTask}/>
 
-                <div>
-                    tasks...
+                    <TaskList tasks={tasks}/>
                 </div>
             </div>
         </div>

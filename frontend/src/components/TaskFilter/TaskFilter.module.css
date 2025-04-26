@@ -1,0 +1,19 @@
+.tab {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tab button {
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgb(98, 98, 98);
+    padding-bottom: 0.4rem;
+}
+
+.tab button.selected {
+    border-bottom: 2px solid rgb(64, 64, 222);
+    color: blue;
+}
