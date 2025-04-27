@@ -6,7 +6,7 @@
     flex-direction: row;
     gap: 0.5rem;
 
-    padding: 1rem;
+    padding: 0.8rem;
     border: 1px solid var(--border-color);
     border-radius: 0.3rem;
 }
@@ -19,6 +19,10 @@
     flex-direction: column;
 }
 
+form.taskMain {
+    align-items: center;
+}
+ 
 .taskDate {
     color: gray;
     font-size: smaller;
@@ -62,11 +66,60 @@ svg {
 }
 
 .iconButton:hover {
-    color: rgb(215, 28, 28);
     background-color: rgb(243, 242, 242);
 }
 
-.actions {
+.deleteIcon:hover {
+    color: rgb(215, 28, 28);
+}
+
+.editIcon:hover {
+    color: var(--primary-color);
+}
+
+.saveIcon:hover {
+    color: lightgreen;
+}
+
+.actions, .editActions {
     display: flex;
     gap: 0.5rem;
+}
+
+.editActions {
+    align-items: center;
+}
+
+.editActions .cancelButton {
+    color: red;
+}
+
+.editActions .saveButton {
+    color: green;
+}
+
+.nameEditInput {
+    border-radius: 0.3rem;
+    border: 1px solid var(--border-color);
+    font-size: medium;
+}
+
+
+.nameEditInput:focus-visible {
+    outline: 2px solid var(--primary-color);
+}
+
+
+.input {
+    width: 100%;
+    padding-right: 1rem;
+}
+
+.input input {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.input input:active {
+    border: 1px solid var(--primary-color)
 }

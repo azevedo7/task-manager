@@ -9,29 +9,30 @@ type Props = {
     tasks: Task[],
     onToggle: (id: number) => Task | undefined,
     onDelete: (id: number) => void,
+    onEdit: (id: number, newName: string) => void,
 }
 
-const TaskList = ({ tasks, onToggle, onDelete }: Props) => {
-    const [filter, setFilter] = useState<FilterType>('all') 
+const TaskList = ({ tasks, onToggle, onDelete, onEdit }: Props) => {
+    const [filter, setFilter] = useState<FilterType>('all')
 
-    function onFilterChange(filterName: FilterType){
+    function onFilterChange(filterName: FilterType) {
         setFilter(filterName);
     }
 
-    const filteredTasks = filter != 'all' ? tasks.filter(task => task.completed === (filter !== 'active')): tasks;
+    const filteredTasks = filter != 'all' ? tasks.filter(task => task.completed === (filter !== 'active')) : tasks;
 
     return (
         <div className={classes.main}>
-            <TaskFilter filter={filter} onFilterChange={onFilterChange} /> 
+            <TaskFilter filter={filter} onFilterChange={onFilterChange} />
 
             <div className={classes.taskList}>
                 {filteredTasks.map(task => (
-                    <TaskItem task={task} onDelete={() => onDelete(task.id)} onToggle={() => onToggle(task.id)} key={task.id} />
+                    <TaskItem task={task} onDelete={() => onDelete(task.id)} onToggle={() => onToggle(task.id)} onEdit={(newName: string) => onEdit(task.id, newName)} key={task.id} />
                 ))}
             </div>
         </div>
 
-  )
+    )
 }
 
 export default TaskList;

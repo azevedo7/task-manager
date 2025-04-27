@@ -27,7 +27,7 @@ function TaskManager () {
         const maxId = tasks.reduce((acc, curr) => {
             return Math.max(curr.id, acc)
         }, 1)
-        setTasks([...tasks, { id: maxId, name: taskName, completed: false, createdAt: new Date() }])
+        setTasks([...tasks, { id: maxId + 1, name: taskName, completed: false, createdAt: new Date() }])
 
         // Return true for now
         return true;
@@ -48,6 +48,9 @@ function TaskManager () {
     }
 
     // Edit task
+    function editTask(id: number, newName: string){
+        setTasks(tasks.map(t => t.id === id ? {...t, name: newName}: t))
+    }
 
 
     return (
@@ -60,7 +63,7 @@ function TaskManager () {
                 <div className='content'>
                     <TaskForm onAddTask={onAddTask}/>
 
-                    <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask}/>
+                    <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} onEdit={editTask}/>
                 </div>
             </div>
         </div>
